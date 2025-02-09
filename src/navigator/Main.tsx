@@ -4,6 +4,7 @@ import React from 'react'
 import { FooterMenu } from '@/components/FooterMenu'
 import { Home } from '@/screens/Home'
 import { Profile } from '@/screens/Profile'
+import { Statistic } from '@/screens/Statistic'
 import {
   ApplicationStackScreenProps,
   MainTabParamList,
@@ -11,13 +12,9 @@ import {
 
 const Tab = createBottomTabNavigator<MainTabParamList>()
 
-function SettingsPlaceholder() {
-  return null
-}
-
 interface MainProps extends ApplicationStackScreenProps<'Main'> {}
 
-export function MainNavigator({ navigation }: MainProps) {
+export function MainNavigator({}: MainProps) {
   return (
     <Tab.Navigator
       safeAreaInsets={{ bottom: 0 }}
@@ -36,7 +33,14 @@ export function MainNavigator({ navigation }: MainProps) {
           tabBarIcon: 'footer-home' as any,
         }}
       />
-
+      <Tab.Screen
+        name="statistic"
+        component={Statistic}
+        options={{
+          tabBarLabel: 'Statistic',
+          tabBarIcon: 'footer-statistic' as any,
+        }}
+      />
       <Tab.Screen
         name="profile"
         component={Profile}
@@ -44,20 +48,6 @@ export function MainNavigator({ navigation }: MainProps) {
           tabBarLabel: 'Profile',
           tabBarIcon: 'footer-profile' as any,
         }}
-      />
-      <Tab.Screen
-        name="settings"
-        component={SettingsPlaceholder}
-        options={{
-          tabBarLabel: 'Settings',
-          tabBarIcon: 'footer-settings' as any,
-        }}
-        listeners={() => ({
-          tabPress: e => {
-            e.preventDefault()
-            navigation.navigate('settings')
-          },
-        })}
       />
     </Tab.Navigator>
   )

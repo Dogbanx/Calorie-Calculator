@@ -67,6 +67,8 @@ const FooterButton = React.memo(
                 ? ((tabBarIcon + '-active') as IconNamesUnion)
                 : tabBarIcon
             }
+            width={27}
+            height={27}
           />
         ) : null}
         {typeof options.tabBarLabel === 'string' && (
@@ -82,7 +84,7 @@ const FooterButton = React.memo(
 const _FooterMenu = React.memo(
   ({ navigation, state, insets, descriptors }: BottomTabBarProps) => {
     const paddingBottom = useMemo(() => {
-      return insets.bottom === 0 ? 20 : insets.bottom
+      return insets.bottom === 0 ? 10 : insets.bottom
     }, [insets])
 
     return (
@@ -90,17 +92,15 @@ const _FooterMenu = React.memo(
         {state.routes.map((route, index) => {
           if (index === 1) {
             return (
-              <React.Fragment key={'chat'}>
-                <FooterButton
-                  isFocused={state.index === index}
-                  navigation={navigation}
-                  target={route.key}
-                  key={route.name}
-                  name={route.name}
-                  params={route.params}
-                  options={descriptors[route.key].options}
-                />
-              </React.Fragment>
+              <FooterButton
+                isFocused={state.index === index}
+                navigation={navigation}
+                target={route.key}
+                key={route.name}
+                name={route.name}
+                params={route.params}
+                options={descriptors[route.key].options}
+              />
             )
           }
           return (

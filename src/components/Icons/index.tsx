@@ -87,15 +87,12 @@ import {
   WarmingFilledIcon,
 } from './all'
 import {
-  ChatFooterIcon,
   HomeActiveFooterIcon,
   HomeFooterIcon,
   ProfileActiveFooterIcon,
   ProfileFooterIcon,
-  ScheduleActiveFooterIcon,
-  ScheduleFooterIcon,
-  SettingsActiveFooterIcon,
-  SettingsFooterIcon,
+  StatisticActiveFooterIcon,
+  StatisticFooterIcon,
 } from './footer.tsx'
 
 export enum IconNames {
@@ -179,11 +176,8 @@ export enum IconNames {
   'edit-2',
   'footer-home',
   'footer-home-active',
-  'footer-schedule',
-  'footer-schedule-active',
-  'footer-chat',
-  'footer-settings',
-  'footer-settings-active',
+  'footer-statistic',
+  'footer-statistic-active',
   'footer-profile',
   'footer-profile-active',
   'security-user',
@@ -359,16 +353,10 @@ export const Icon = React.memo(({ name, ...rest }: IconProps) => {
       return <HomeFooterIcon {...rest} />
     case 'footer-home-active':
       return <HomeActiveFooterIcon {...rest} />
-    case 'footer-schedule':
-      return <ScheduleFooterIcon {...rest} />
-    case 'footer-schedule-active':
-      return <ScheduleActiveFooterIcon {...rest} />
-    case 'footer-chat':
-      return <ChatFooterIcon {...rest} />
-    case 'footer-settings':
-      return <SettingsFooterIcon {...rest} />
-    case 'footer-settings-active':
-      return <SettingsActiveFooterIcon {...rest} />
+    case 'footer-statistic':
+      return <StatisticFooterIcon {...rest} />
+    case 'footer-statistic-active':
+      return <StatisticActiveFooterIcon {...rest} />
     case 'footer-profile':
       return <ProfileFooterIcon {...rest} />
     case 'footer-profile-active':

@@ -22,6 +22,7 @@ export const Colors = {
     green15: '#36B07526',
     green8: '#36B07514',
     orange: '#E4601D',
+    orange10: '#e77b3d',
   },
   black: {
     '2': '#F5F7FA',

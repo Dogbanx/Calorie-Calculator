@@ -3,10 +3,10 @@ import { Text, View } from 'react-native'
 
 import { MainTabScreenProps } from '@/types/navigation'
 
-export function Profile({}: MainTabScreenProps<'profile'>) {
+export function Statistic({}: MainTabScreenProps<'statistic'>) {
   return (
     <View>
-      <Text>Profile Screen</Text>
+      <Text>Statistic Screen</Text>
     </View>
   )
 }

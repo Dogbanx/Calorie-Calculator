@@ -14,7 +14,7 @@ export type ApplicationStackParamList = {
 export type MainTabParamList = {
   home: undefined
   profile: undefined
-  settings: undefined
+  statistic: undefined
 }
 
 // Тип для екранів вкладеного табу

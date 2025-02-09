@@ -36,13 +36,13 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   footerText: {
-    fontSize: 10,
-    lineHeight: 16,
-    color: Colors.black['50'],
+    fontSize: 12,
+    lineHeight: 14,
+    color: Colors.black['90'],
     textAlign: 'center',
     marginTop: 4,
   },
   activeText: {
-    color: Colors.primary.green,
+    color: Colors.primary.orange10,
   },
 })
