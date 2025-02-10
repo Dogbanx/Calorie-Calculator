@@ -5,7 +5,7 @@ import { Colors } from '@/theme'
 import { IIconProps } from '@/types/components/icons.ts'
 
 export const StatisticFooterIcon = ({
-  color = Colors.black['90'],
+  color = Colors.black['50'],
   width = 24,
   height = 24,
   ...props
@@ -67,7 +67,7 @@ export const StatisticActiveFooterIcon = ({
 }
 
 export const ProfileFooterIcon = ({
-  color = Colors.black['90'],
+  color = Colors.black['50'],
   width = 24,
   height = 24,
   fill = 'none',
@@ -119,7 +119,7 @@ export const ProfileActiveFooterIcon = ({
 }
 
 export const HomeFooterIcon = ({
-  color = Colors.black['90'],
+  color = Colors.black['50'],
   width = 24,
   height = 24,
   fill = 'none',
