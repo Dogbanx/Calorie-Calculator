@@ -32,6 +32,7 @@ import {
   CloseFilledIcon,
   CloseIcon,
   DangerIcon,
+  DeleteIcon,
   DocumentFilledIcon,
   DocumentTextIcon,
   DoubleCheckIcon,
@@ -183,6 +184,7 @@ export enum IconNames {
   'security-user',
   'clock',
   'user-late',
+  'delete',
 }
 
 export type IconNamesUnion = keyof typeof IconNames
@@ -367,6 +369,8 @@ export const Icon = React.memo(({ name, ...rest }: IconProps) => {
       return <ClockIcon {...rest} />
     case 'user-late':
       return <UserLateIcon {...rest} />
+    case 'delete':
+      return <DeleteIcon {...rest} />
 
     default:
       return null

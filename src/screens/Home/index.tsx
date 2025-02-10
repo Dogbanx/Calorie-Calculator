@@ -102,7 +102,7 @@ export function Home() {
                   onPress={() => handleRemoveMeal(meal.id)}
                   style={styles.deleteButton}
                 >
-                  <Icon name="close" width={20} height={20} />
+                  <Icon name="delete" width={20} height={20} />
                 </Pressable>
               </View>
             ))
@@ -147,9 +147,7 @@ const styles = StyleSheet.create({
   },
   deleteButton: {
     backgroundColor: Colors.primary.orange10,
-    paddingTop: 8,
-    paddingLeft: 8,
-    padding: 5,
+    padding: 6,
     borderRadius: 15,
   },
 })
