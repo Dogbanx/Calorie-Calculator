@@ -3,3 +3,4 @@ export type Meal = {
   name: string
   calories: number
 }
+export type MealType = 'breakfast' | 'lunch' | 'dinner' | 'snacks'

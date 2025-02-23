@@ -23,18 +23,7 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  chatButton: {
-    position: 'absolute',
-    bottom: 0,
-    width: 78,
-    height: 78,
-    borderRadius: 39,
-    borderWidth: 5,
-    borderColor: Colors.white,
-    backgroundColor: Colors.primary.green,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
   footerText: {
     fontSize: 12,
     lineHeight: 14,

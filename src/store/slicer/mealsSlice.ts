@@ -1,13 +1,12 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { format } from 'date-fns'
 
-import { Meal } from './types'
+import { Meal, MealType } from './types'
 
 export interface MealsState {
   currentDate: string
-  meals: Record<string, Meal[]>
+  meals: Record<string, Record<MealType, Meal[]>>
 }
-
 const initialState: MealsState = {
   currentDate: format(new Date(), 'yyyy-MM-dd'),
   meals: {},
@@ -20,20 +19,42 @@ const mealsSlice = createSlice({
     setCurrentDate: (state, action: PayloadAction<string>) => {
       state.currentDate = action.payload
     },
-    addMeal: (state, action: PayloadAction<{ date: string; meal: Meal }>) => {
-      const { date, meal } = action.payload
-      if (!state.meals[date]) {
-        state.meals[date] = []
+    addMeal: (
+      state,
+      action: PayloadAction<{ date: string; mealType: MealType; meal: Meal }>,
+    ) => {
+      const { date, mealType, meal } = action.payload
+
+      // Якщо дати немає — ініціалізуємо
+      const dateMeals = state.meals[date] ?? {
+        breakfast: [],
+        lunch: [],
+        dinner: [],
+        snacks: [],
       }
-      state.meals[date].push(meal)
+
+      // Створюємо новий масив прийомів їжі
+      const updatedMeals = {
+        ...dateMeals,
+        [mealType]: [...(dateMeals[mealType] ?? []), meal],
+      }
+
+      // Оновлюємо весь запис дати в state
+      state.meals[date] = updatedMeals
     },
     removeMeal: (
       state,
-      action: PayloadAction<{ date: string; mealId: string }>,
+      action: PayloadAction<{
+        date: string
+        mealType: MealType
+        mealId: string
+      }>,
     ) => {
-      const { date, mealId } = action.payload
+      const { date, mealType, mealId } = action.payload
       if (state.meals[date]) {
-        state.meals[date] = state.meals[date].filter(meal => meal.id !== mealId)
+        state.meals[date][mealType] = state.meals[date][mealType].filter(
+          meal => meal.id !== mealId,
+        )
       }
     },
   },
